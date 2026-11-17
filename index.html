@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Kokama | Voces Vivas de la Amazonía Peruana</title>
+  <meta name="description" content="Plataforma educativa e interactiva para el aprendizaje y revalorización de la lengua y cultura Kukama-Kukamiria de la selva peruana.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Audio Indicator & Floating Controls -->
+  <div class="floating-audio-control" id="audioAmbientWidget" title="Activar/Desactivar Sonido Ambiental de la Selva">
+    <button class="sound-toggle-btn" id="soundToggleBtn" aria-label="Sonido ambiental">
+      <i class="fa-solid fa-volume-xmark" id="soundIcon"></i>
+      <span class="sound-label">Sonido Selva</span>
+      <span class="sound-waves" id="soundWaves">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 40 40" class="brand-svg">
+            <circle cx="20" cy="20" r="18" fill="#1C442B" />
+            <path d="M10 24 C14 14, 26 14, 30 24 C26 28, 14 28, 10 24 Z" fill="#D7B48D" />
+            <circle cx="20" cy="21" r="4" fill="#1C442B" />
+            <path d="M6 20 C12 16, 28 16, 34 20" stroke="#F5EFEB" stroke-width="2" stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">KOKAMA</span>
+          <span class="brand-subtitle">Kukama-Kukamiria</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li class="nav-item"><a href="#lengua-datos" class="nav-link">La Lengua</a></li>
+          <li class="nav-item"><a href="#aprender" class="nav-link">Aprender</a></li>
+          <li class="nav-item"><a href="#cuentos" class="nav-link">Cuentos y Mitos</a></li>
+          <li class="nav-item"><a href="#juegos" class="nav-link">Juegos</a></li>
+          <li class="nav-item"><a href="#cultura" class="nav-link">Cultura</a></li>
+          <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#aprender" class="btn-nav-cta">
+          <i class="fa-solid fa-seedling"></i>
+          <span>Empezar</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECCIÓN 1: INICIO & BIENVENIDA -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-overlay"></div>
+      <!-- Amazonian River & Botanical Animated SVG Motif -->
+      <div class="hero-decorations">
+        <div class="leaf-motif leaf-1"></div>
+        <div class="leaf-motif leaf-2"></div>
+      </div>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="cultural-badge">
+            <span class="badge-dot"></span>
+            <span>Amazonía Peruana • Loreto • Familia Tupí-Guaraní</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="greeting-kukama">Tsaniuri!</span>
+            <span class="hero-main-heading">Descubre y Aprende la Lengua y Sabiduría <span class="highlight-text">Kokama</span></span>
+          </h1>
+
+          <p class="hero-description">
+            Bienvenido a un viaje interactivo por las aguas vivas del Marañón y la selva de Loreto. 
+            Conoce el legado ancestral del pueblo <strong>Kukama-Kukamiria</strong>: sus sonidos, palabras, leyendas milenarias y su profunda conexión con la naturaleza.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#aprender" class="btn btn-primary btn-large pulse-glow">
+              <i class="fa-solid fa-compass"></i>
+              <span>Empezar a Aprender</span>
+            </a>
+            <a href="#cuentos" class="btn btn-outline btn-large">
+              <i class="fa-solid fa-book-open-reader"></i>
+              <span>Explorar Cuentos</span>
+            </a>
+          </div>
+
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <span class="highlight-number">18</span>
+              <span class="highlight-label">Grafías oficiales aprobadas por el MINEDU</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="highlight-number">+1,000</span>
+              <span class="highlight-label">Años de historia y canto fluvial en Loreto</span>
+            </div>
+            <div class="highlight-divider"></div>
+            <div class="highlight-item">
+              <span class="highlight-number">100%</span>
+              <span class="highlight-label">Interactiva, abierta y comunitaria</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card-preview">
+          <div class="hero-card-inner">
+            <div class="card-tag">Palabra del Día • <i>Tupana Ikiatu</i></div>
+            <div class="hero-word-box">
+              <h3 class="hero-word" id="heroWordDisplay">Yawara</h3>
+              <span class="hero-phonetic">[ya-wá-ra]</span>
+              <p class="hero-meaning">Jaguar / Otorongo, el señor guardián del monte</p>
+              <button class="audio-btn-sample" onclick="playSpeechText('Yawara', 'Jaguar en idioma Kokama')" aria-label="Escuchar pronunciación">
+                <i class="fa-solid fa-volume-high"></i>
+                <span>Escuchar voz</span>
+              </button>
+            </div>
+            <div class="hero-card-footer">
+              <span>Río Marañón, Loreto - Perú</span>
+              <span class="icon-river"><i class="fa-solid fa-water"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wave-transition">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,58.7C672,43,768,21,864,21.3C960,21,1056,43,1152,58.7C1248,75,1344,85,1392,90.7L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#F5EFEB"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: DATOS SOBRE LA LENGUA, ORIGEN E IMPORTANCIA -->
+    <section class="section language-facts-section" id="lengua-datos">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-header-pill"><i class="fa-solid fa-feather-pointed"></i> Memoria Ancestral</span>
+          <h2 class="section-title">El Pueblo y la Lengua <span class="highlight">Kukama-Kukamiria</span></h2>
+          <p class="section-subtitle">
+            Un legado vivo forjado a lo largo de las riberas del Marañón, Huallaga, Ucayali y el gran Amazonas peruano.
+          </p>
+        </div>
+
+        <div class="facts-grid">
+          <!-- Tarjeta 1: Origen -->
+          <div class="fact-card">
+            <div class="fact-icon-wrapper">
+              <i class="fa-solid fa-tree"></i>
+            </div>
+            <h3 class="fact-title">Origen y Familia Lingüística</h3>
+            <p class="fact-text">
+              La lengua <strong>Kukama-Kukamiria</strong> pertenece a la prestigiosa familia lingüística <strong>Tupí-Guaraní</strong>. Sus raíces históricas muestran migraciones ancestrales a través de la cuenca amazónica, asentándose estratégicamente en la confluencia de los grandes ríos de Loreto.
+            </p>
+            <div class="fact-pill">Familia Tupí-Guaraní</div>
+          </div>
+
+          <!-- Tarjeta 2: Territorio -->
+          <div class="fact-card">
+            <div class="fact-icon-wrapper">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <h3 class="fact-title">Pueblo del Agua (Kupari)</h3>
+            <p class="fact-text">
+              Autodenominados como los <em>"hombres y mujeres del agua"</em>, habitan principalmente las provincias de <strong>Loreto, Requena, Alto Amazonas y Maynas</strong> en la región Loreto. Su cultura, navegación y pesca son el corazón de su cosmovisión.
+            </p>
+            <div class="fact-pill">Región Loreto, Perú</div>
+          </div>
+
+          <!-- Tarjeta 3: Importancia -->
+          <div class="fact-card">
+            <div class="fact-icon-wrapper">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <h3 class="fact-title">Importancia y Revitalización</h3>
+            <p class="fact-text">
+              Clasificada en estado de <strong>alta vulnerabilidad</strong> por el Ministerio de Cultura, la lengua hoy vive una admirable campaña comunitaria de rescate impulsada por sabios ancestrales, escuelas bilingües y comunicadores indígenas de Radio Ucamara.
+            </p>
+            <div class="fact-pill">Patrimonio Cultural Inmaterial</div>
+          </div>
+
+          <!-- Tarjeta 4: Cosmovisión -->
+          <div class="fact-card">
+            <div class="fact-icon-wrapper">
+              <i class="fa-solid fa-water"></i>
+            </div>
+            <h3 class="fact-title">El Río no es solo agua, es un Ser Vivo</h3>
+            <p class="fact-text">
+              Para los kukama, el río Marañón y sus afluentes albergan ciudades subacuáticas donde viven los <strong>Kupari</strong> (espíritus y ancestros). La lengua codifica nombres para más de 100 especies de peces y plantas con virtudes curativas incomparables.
+            </p>
+            <div class="fact-pill">Cosmovisión Fluvial</div>
+          </div>
+        </div>
+
+        <!-- Mini Interactive Quote Banner -->
+        <div class="quote-banner">
+          <div class="quote-symbol">“</div>
+          <div class="quote-content">
+            <p class="quote-text">
+              <em>"Kumari ta iwaiti, yura mari ta tsana: Mientras el río fluya y la selva respire, nuestra voz kukama nunca se extinguirá."</em>
+            </p>
+            <span class="quote-author">— Sabia comunitaria Kukama, Nauta, Loreto</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: SECCIÓN DE APRENDER (CON TARJETAS INTERACTIVAS CLICKEABLES) -->
+    <section class="section learning-section" id="aprender">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-header-pill"><i class="fa-solid fa-graduation-cap"></i> Espacio Educativo</span>
+          <h2 class="section-title">Aprende la Lengua <span class="highlight">Paso a Paso</span></h2>
+          <p class="section-subtitle">
+            Haz clic en cualquiera de las tarjetas temáticas para abrir el módulo interactivo con vocabulario, pronunciación con audio, ilustraciones y ejemplos prácticos.
+          </p>
+        </div>
+
+        <!-- Tarjetas Principales de Aprendizaje -->
+        <div class="learning-cards-grid">
+          
+          <!-- Card 1: Números -->
+          <div class="module-card" data-module="numeros" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir módulo interactivo de números">
+            <div class="module-card-img" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80');">
+              <div class="module-badge"><i class="fa-solid fa-arrow-up-1-9"></i> 1 al 10+</div>
+            </div>
+            <div class="module-card-body">
+              <span class="module-kicker">Tsanatakana</span>
+              <h3 class="module-title">Los Números</h3>
+              <p class="module-desc">
+                Aprende el sistema numérico del 1 al 10 en Kokama: <em>Wepe, Mukuika, Mutsapirika...</em> y cómo componer cifras mayores.
+              </p>
+              <div class="module-card-action">
+                <span class="action-link">Abrir módulo de Números <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="chip-count">10 fichas</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Alfabeto -->
+          <div class="module-card" data-module="alfabeto" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir módulo interactivo de alfabeto">
+            <div class="module-card-img" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80');">
+              <div class="module-badge"><i class="fa-solid fa-font"></i> 18 Grafías</div>
+            </div>
+            <div class="module-card-body">
+              <span class="module-kicker">Ikitu Kana</span>
+              <h3 class="module-title">El Alfabeto Oficial</h3>
+              <p class="module-desc">
+                Descubre las 5 vocales y 13 consonantes oficializadas por el MINEDU, incluyendo las particulares <strong>ë</strong> e <strong>ɨ</strong>.
+              </p>
+              <div class="module-card-action">
+                <span class="action-link">Abrir módulo de Alfabeto <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="chip-count">18 grafías</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Animales -->
+          <div class="module-card" data-module="animales" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir módulo interactivo de animales">
+            <div class="module-card-img" style="background-image: url('https://images.unsplash.com/photo-1550853024-fae8cd4be477?auto=format&fit=crop&w=800&q=80');">
+              <div class="module-badge"><i class="fa-solid fa-paw"></i> Fauna Amazónica</div>
+            </div>
+            <div class="module-card-body">
+              <span class="module-kicker">Mīra kana / Animaru</span>
+              <h3 class="module-title">Animales de la Selva</h3>
+              <p class="module-desc">
+                Conoce los nombres sagrados del jaguar, el bufeo colorado, el paiche, la anaconda y las aves que habitan la Amazonía.
+              </p>
+              <div class="module-card-action">
+                <span class="action-link">Abrir módulo de Animales <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="chip-count">12 especies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Saludos y Frases de Cortesía -->
+          <div class="module-card" data-module="frases" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Abrir módulo interactivo de frases y saludos">
+            <div class="module-card-img" style="background-image: url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80');">
+              <div class="module-badge"><i class="fa-solid fa-comments"></i> Diálogos</div>
+            </div>
+            <div class="module-card-body">
+              <span class="module-kicker">Maniyawa</span>
+              <h3 class="module-title">Saludos y Frases</h3>
+              <p class="module-desc">
+                Aprende a saludar según seas varón o mujer, dar las gracias, dar la bienvenida y despedirte con respeto en una comunidad.
+              </p>
+              <div class="module-card-action">
+                <span class="action-link">Abrir módulo de Frases <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="chip-count">8 expresiones</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: CUENTOS Y LEYENDAS AMAZÓNICAS EN KOKAMA Y ESPAÑOL -->
+    <section class="section stories-section" id="cuentos">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-header-pill"><i class="fa-solid fa-book-sparkles"></i> Tradición Oral</span>
+          <h2 class="section-title">Cuentos y Leyendas <span class="highlight">Kukama</span></h2>
+          <p class="section-subtitle">
+            Relatos ancestrales narrados a la orilla del fuego y del río, transmitidos por abuelas y sabios para enseñar el equilibrio con la selva.
+          </p>
+        </div>
+
+        <div class="story-tabs-nav" role="tablist">
+          <button class="story-tab active" data-story="tsuna" role="tab" aria-selected="true">
+            <i class="fa-solid fa-water"></i>
+            <span>Tsuna (El Bufeo Colorado)</span>
+          </button>
+          <button class="story-tab" data-story="serpiente" role="tab" aria-selected="false">
+            <i class="fa-solid fa-ring"></i>
+            <span>Mai Kurua (Madre de las Aguas)</span>
+          </button>
+          <button class="story-tab" data-story="lupuna" role="tab" aria-selected="false">
+            <i class="fa-solid fa-tree"></i>
+            <span>Kumaka (La Lupuna Sagrada)</span>
+          </button>
+          <button class="story-tab" data-story="picaflor" role="tab" aria-selected="false">
+            <i class="fa-solid fa-dove"></i>
+            <span>Mainuma (El Picaflor Mensajero)</span>
+          </button>
+        </div>
+
+        <!-- Contenedor del Cuento Activo -->
+        <div class="story-display-card" id="storyDisplayContainer">
+          <!-- El contenido se inyecta y actualiza dinámicamente con JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: JUEGOS INTERACTIVOS -->
+    <section class="section games-section" id="juegos">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-header-pill"><i class="fa-solid fa-gamepad"></i> Aprende Jugando</span>
+          <h2 class="section-title">Retos y Juegos <span class="highlight">Interactivos</span></h2>
+          <p class="section-subtitle">
+            Pon a prueba tu memoria y aprendizaje con dinámicas diseñadas para memorizar vocabulario y entender la cultura kukama.
+          </p>
+        </div>
+
+        <div class="games-nav-pills">
+          <button class="game-selector-btn active" id="btnGameMemory" onclick="switchGame('memory')">
+            <i class="fa-solid fa-clone"></i> 1. Memoria de Palabras
+          </button>
+          <button class="game-selector-btn" id="btnGameTrivia" onclick="switchGame('trivia')">
+            <i class="fa-solid fa-circle-question"></i> 2. Trivia Amazónica
+          </button>
+          <button class="game-selector-btn" id="btnGameRiddle" onclick="switchGame('riddle')">
+            <i class="fa-solid fa-lightbulb"></i> 3. Adivinanza de la Selva
+          </button>
+        </div>
+
+        <!-- JUEGO 1: MEMORIA DE PALABRAS -->
+        <div class="game-container-box" id="gameMemoryView">
+          <div class="game-header-bar">
+            <div class="game-info">
+              <h3><i class="fa-solid fa-clone"></i> Empareja el Vocabulario Kukama</h3>
+              <p>Voltea las cartas para encontrar la pareja: la palabra en Kokama con su significado en español o imagen correspondiente.</p>
+            </div>
+            <div class="game-stats">
+              <div class="stat-badge">
+                <span class="stat-title">Movimientos</span>
+                <span class="stat-value" id="memoryMoves">0</span>
+              </div>
+              <div class="stat-badge">
+                <span class="stat-title">Parejas</span>
+                <span class="stat-value" id="memoryMatches">0 / 6</span>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="initMemoryGame()">
+                <i class="fa-solid fa-rotate-right"></i> Reiniciar
+              </button>
+            </div>
+          </div>
+
+          <div class="memory-grid" id="memoryGrid">
+            <!-- Renderizado dinámico de tarjetas -->
+          </div>
+        </div>
+
+        <!-- JUEGO 2: TRIVIA / QUIZ -->
+        <div class="game-container-box" id="gameTriviaView" style="display: none;">
+          <div class="game-header-bar">
+            <div class="game-info">
+              <h3><i class="fa-solid fa-circle-question"></i> Desafío del Yachachiq (Sabio)</h3>
+              <p>Responde las preguntas para poner a prueba tu atención sobre números, animales y cultura.</p>
+            </div>
+            <div class="game-stats">
+              <div class="stat-badge">
+                <span class="stat-title">Puntuación</span>
+                <span class="stat-value" id="triviaScore">0 pts</span>
+              </div>
+              <div class="stat-badge">
+                <span class="stat-title">Pregunta</span>
+                <span class="stat-value" id="triviaStep">1 / 5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="trivia-question-wrapper" id="triviaWrapper">
+            <!-- Inyección dinámica de la pregunta -->
+          </div>
+        </div>
+
+        <!-- JUEGO 3: ADIVINANZAS -->
+        <div class="game-container-box" id="gameRiddleView" style="display: none;">
+          <div class="game-header-bar">
+            <div class="game-info">
+              <h3><i class="fa-solid fa-lightbulb"></i> ¿Quién soy en la Selva? (Maniya Ta?)</h3>
+              <p>Lee las pistas poéticas de los abuelos kukama y descubre qué animal o ser mitológico se esconde.</p>
+            </div>
+          </div>
+
+          <div class="riddle-card-wrapper" id="riddleWrapper">
+            <!-- Inyección dinámica -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: CULTURA KOKAMA, HISTORIA, ORIGEN Y DATOS -->
+    <section class="section culture-section" id="cultura">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="sub-header-pill"><i class="fa-solid fa-landmark"></i> Identidad y Sabiduría</span>
+          <h2 class="section-title">El Alma Cultural de los <span class="highlight">Kukama</span></h2>
+          <p class="section-subtitle">
+            Historia milenaria, cosmovisión fluvial, arte cerámico y la lucha permanente por mantener vivo el espíritu de la selva peruana.
+          </p>
+        </div>
+
+        <div class="culture-showcase-grid">
+          
+          <!-- Bloque 1: Cosmovisión y los 3 Mundos -->
+          <div class="culture-card">
+            <div class="culture-card-img" style="background-image: url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80');">
+              <span class="culture-tag">Cosmovisión</span>
+            </div>
+            <div class="culture-card-content">
+              <h3>La Estructura del Cosmos: Los Tres Mundos</h3>
+              <p>
+                Para el sabio kukama el universo está compuesto por tres dimensiones conectadas por el espíritu del agua y los árboles gigantes:
+              </p>
+              <ul class="culture-points">
+                <li><strong>Ikatse (Mundo de Arriba):</strong> El cielo donde habitan las estrellas y los creadores primordiales.</li>
+                <li><strong>Iwititi (Mundo del Centro):</strong> La tierra, las chacras y la selva donde caminan los humanos y animales.</li>
+                <li><strong>Kupari (Mundo del Agua):</strong> El fondo de los ríos Marañón y Ucayali, donde los espíritus y ancestros viven en ciudades de oro y cuidan la abundancia pesquera.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bloque 2: Cerámica y Arte Kené Ribereño -->
+          <div class="culture-card">
+            <div class="culture-card-img" style="background-image: url('https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80');">
+              <span class="culture-tag">Arte Ancestral</span>
+            </div>
+            <div class="culture-card-content">
+              <h3>La Cerámica y los Trazos del Río</h3>
+              <p>
+                Las mujeres kukama son maestras ceramistas que moldean la greda blanca ribereña (<em>ñe’ẽ</em>) con ceniza de corteza de apacharama.
+              </p>
+              <p>
+                Pintan con tintes naturales como el <strong>achiote rojo</strong>, la arcilla negra y el <strong>huito</strong>. Cada trazo geométrico ondulado no es solo adorno: es el mapa de los ríos, el movimiento de la anaconda protectora y las constelaciones vistas en el agua.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bloque 3: Nauta y Radio Ucamara -->
+          <div class="culture-card">
+            <div class="culture-card-img" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80');">
+              <span class="culture-tag">Revitalización</span>
+            </div>
+            <div class="culture-card-content">
+              <h3>Nauta y la Voz que Sana: Radio Ucamara</h3>
+              <p>
+                En la histórica ciudad de <strong>Nauta (Loreto)</strong>, nace uno de los movimientos más hermosos de preservación cultural: <em>Radio Ucamara</em>.
+              </p>
+              <p>
+                Junto a los abuelos y las abuelas kukamas, niñas, niños y jóvenes graban videoclips y canciones en lengua materna (como el célebre tema <em>"Kumbarikira"</em>), convirtiendo la música hip-hop y tradicional en una poderosa herramienta para no olvidar sus raíces.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bloque 4: La Pesca y la Alimentación Ribereña -->
+          <div class="culture-card">
+            <div class="culture-card-img" style="background-image: url('https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80');">
+              <span class="culture-tag">Vida Cotidiana</span>
+            </div>
+            <div class="culture-card-content">
+              <h3>El Arte del Río y la Dieta Amazónica</h3>
+              <p>
+                Como pueblo de grandes canoeros, su alimentación se basa en el paiche (<em>iwatsu</em>), el boquichico, la gamitana y el zúngaro, preparados en patarashca o ahumados en mishiwa.
+              </p>
+              <p>
+                La yuca brava transformada en fariña, el plátano y el aguaje completan una nutrición ligada a los ciclos de creciente (<em>mijana</em>) y vaciante de los ríos amazónicos.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Curiosidades / Datos Rápidos -->
+        <div class="fun-facts-container">
+          <h3 class="fun-facts-title"><i class="fa-solid fa-sparkles"></i> Datos Fascinantes del Pueblo Kokama</h3>
+          <div class="fun-facts-grid">
+            <div class="fun-fact-item">
+              <div class="fun-fact-icon"><i class="fa-solid fa-venus-mars"></i></div>
+              <div class="fun-fact-detail">
+                <h4>Variación por Género al Hablar</h4>
+                <p>En el idioma Kokama, ciertas terminaciones y palabras varían dependiendo de si quien habla es un hombre o una mujer.</p>
+              </div>
+            </div>
+            <div class="fun-fact-item">
+              <div class="fun-fact-icon"><i class="fa-solid fa-ship"></i></div>
+              <div class="fun-fact-detail">
+                <h4>Grandes Navegantes Prehispánicos</h4>
+                <p>En las crónicas del siglo XVI, los exploradores quedaron asombrados por las armadas de canoas y el dominio de navegación de los kukamas en el Marañón.</p>
+              </div>
+            </div>
+            <div class="fun-fact-item">
+              <div class="fun-fact-icon"><i class="fa-solid fa-ear-listen"></i></div>
+              <div class="fun-fact-detail">
+                <h4>Etimología de su Nombre</h4>
+                <p><em>Kukama</em> proviene del término que alude a "gente de la pequeña chacra o de la orilla de la quebrada".</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: FOOTER & CONTACTO -->
+    <footer class="site-footer" id="contacto">
+      <div class="container footer-container">
+        
+        <div class="footer-grid">
+          <!-- Columna 1: Identidad -->
+          <div class="footer-col brand-col">
+            <div class="footer-brand">
+              <div class="brand-icon">
+                <svg viewBox="0 0 40 40" class="brand-svg">
+                  <circle cx="20" cy="20" r="18" fill="#F5EFEB" />
+                  <path d="M10 24 C14 14, 26 14, 30 24 C26 28, 14 28, 10 24 Z" fill="#1C442B" />
+                  <circle cx="20" cy="21" r="4" fill="#D7B48D" />
+                </svg>
+              </div>
+              <span class="footer-brand-name">PROYECTO KOKAMA</span>
+            </div>
+            <p class="footer-tagline">
+              Plataforma prototipo interactiva dedicada a salvaguardar, enseñar y difundir la riqueza de la lengua y cosmovisión del pueblo Kukama-Kukamiria de la selva peruana.
+            </p>
+            <div class="social-links">
+              <a href="javascript:void(0)" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="javascript:void(0)" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="javascript:void(0)" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="javascript:void(0)" class="social-icon" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces Rápidos -->
+          <div class="footer-col links-col">
+            <h4 class="footer-heading">Secciones del Prototipo</h4>
+            <ul class="footer-links">
+              <li><a href="#inicio"><i class="fa-solid fa-angle-right"></i> Inicio y Bienvenida</a></li>
+              <li><a href="#lengua-datos"><i class="fa-solid fa-angle-right"></i> Datos de la Lengua</a></li>
+              <li><a href="#aprender"><i class="fa-solid fa-angle-right"></i> Módulos de Aprendizaje</a></li>
+              <li><a href="#cuentos"><i class="fa-solid fa-angle-right"></i> Cuentos y Mitos</a></li>
+              <li><a href="#juegos"><i class="fa-solid fa-angle-right"></i> Juegos Interactivos</a></li>
+              <li><a href="#cultura"><i class="fa-solid fa-angle-right"></i> Sabiduría y Cultura</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Formulario de Contacto -->
+          <div class="footer-col contact-col">
+            <h4 class="footer-heading">Escríbenos / Contáctanos</h4>
+            <p class="contact-desc">¿Tienes sugerencias, relatos familiares o deseas colaborar con la iniciativa?</p>
+            
+            <form class="footer-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <input type="text" id="contactName" class="form-input" placeholder="Tu nombre completo" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="contactEmail" class="form-input" placeholder="Correo electrónico" required>
+              </div>
+              <div class="form-group">
+                <textarea id="contactMessage" class="form-input form-textarea" rows="3" placeholder="Tu mensaje, consulta o aporte..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-secondary btn-full">
+                <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Subfooter y Copyright -->
+        <div class="sub-footer">
+          <div class="sub-footer-text">
+            <span>&copy; 2026 <strong>Proyecto Kokama</strong>. Creado con respeto cultural por los pueblos originarios de Loreto, Perú.</span>
+          </div>
+          <div class="sub-footer-badges">
+            <span class="badge-source"><i class="fa-solid fa-certificate"></i> Fuentes: MINEDU, FORMABIAP & Radio Ucamara</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- MODAL INTERACTIVO DE APRENDIZAJE DETALLADO -->
+  <!-- (Se abre al hacer clic en las tarjetas de aprender) -->
+  <!-- ============================================== -->
+  <div class="modal-backdrop" id="learningModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-header-info">
+          <span class="modal-badge-category" id="modalCategoryBadge">Módulo</span>
+          <h3 class="modal-title" id="modalMainTitle">Título del Módulo</h3>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana emergente">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-toolbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="modalSearchInput" placeholder="Buscar palabra o traducción..." oninput="filterModalCards(this.value)">
+        </div>
+        <div class="filter-pills" id="modalFilterPills">
+          <!-- Filtros dinámicos según el módulo -->
+        </div>
+      </div>
+
+      <div class="modal-body" id="modalCardsContainer">
+        <!-- Tarjetas dinámicas inyectadas con JS -->
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-tip">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span id="modalTipText">Haz clic en el botón de altavoz de cada ficha para escuchar la fonética simulada.</span>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="closeLearningModal()">Entendido, volver</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de Notificación -->
+  <div class="toast-notification" id="toastNotification">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span class="toast-message" id="toastMessage">¡Mensaje enviado con éxito!</span>
+  </div>
+
+  <!-- Script Principal -->
+  <script src="script.js"></script>
+</body>
+</html>
+
