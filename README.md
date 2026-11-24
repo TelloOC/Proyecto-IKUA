@@ -1,7 +1,7 @@
-# 🌿 Proyecto Kokama (Kukama-Kukamiria)
+# 🌿 Proyecto IKUA ()
 > **Plataforma Educativa e Interactiva Prototipo sobre la Lengua y Cultura de la Amazonía Peruana**
 
-Bienvenido al prototipo de **Proyecto Kokama**, un espacio digital diseñado para revalorizar, difundir y enseñar la lengua ancestral **Kukama-Kukamiria** (familia Tupí-Guaraní), hablada en la región de Loreto (cuencas de los ríos Marañón, Huallaga, Ucayali y Amazonas).
+Bienvenido al prototipo de **Proyecto IKUA**, un espacio digital diseñado para revalorizar, difundir y enseñar la lengua ancestral **Kukama-Kukamiria** (familia Tupí-Guaraní), hablada en la región de Loreto (cuencas de los ríos Marañón, Huallaga, Ucayali y Amazonas).
 
 ---
 
